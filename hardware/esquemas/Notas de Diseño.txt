@@ -1,0 +1,11 @@
+Notas de Diseño
+
+1. Interfaz del Sensor de Movimiento (GPIO 4)
+Para el desarrollo del prototipo virtual en Wokwi, se integró un sensor de movimiento PIR conectado al pin GPIO 4 de la ESP32 para emular el comportamiento del sensor físico de vibración/apertura de la bicicleta. La entrada digital se configuró utilizando la resistencia interna de acoplamiento `INPUT_PULLUP`. Esta decisión de diseño simplifica las conexiones, reduce el ruido eléctrico de conmutación y optimiza el espacio dentro del encapsulado físico al prescindir de resistencias externas.
+
+2. Simulación de Red en Entorno Virtual ("Wokwi-GUEST")
+Con el propósito de asegurar que el proyecto online sea completamente ejecutable por el equipo docente sin requerir hardware físico, las credenciales de conectividad inalámbrica en el entorno de pruebas de Wokwi se configuraron apuntando al punto de acceso por defecto de la plataforma:
+- SSID: "Wokwi-GUEST"
+- Password: "" (Abierta)
+
+Esto permite simular el tráfico de datos hacia las APIs externas (como Telegram y Firebase).
